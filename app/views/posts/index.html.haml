@@ -2,7 +2,9 @@
   = link_to (image_tag post.image.url(:thumb)), post
   %h2= link_to post.title, post
   %p= pluralize(post.comments.count, "Comment")
-
+  %p 
+    Likes:
+    =post.get_upvotes.size
 
 
 = link_to "New Post", new_post_path
