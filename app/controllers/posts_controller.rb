@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @random_post = Post.where.not(id: @post).order("RANDOM()").first
   end
 
   def new
